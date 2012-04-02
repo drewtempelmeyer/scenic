@@ -3,11 +3,11 @@ Scenic is an image viewer for beautiful and elegant images. Scenic supports them
 
 ## How do I use it? (Or Quick Start)
 
-Include the Scenic theme stylesheet you want to use in the <head> section of your page.
+Include the Scenic theme stylesheet you want to use in the head section of your page.
 
     <link rel="stylesheet" type="text/css" href="css/scenic.default.css" media="screen">
 
-Include jQuery (if not using it already) and the scenic.packed.js file in the <head> section of your page.
+Include jQuery (if not using it already) and the scenic.packed.js file in the head section of your page.
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/scenic.packed.js"></script>
@@ -18,7 +18,7 @@ Your images should contain an A element (and an IMG element if you want to displ
     <a href="/images/largephoto2.jpg" rel="vacation" class="scenic"><img src="/images/thumbphoto2.jpg" alt=""></a>
     <a href="/images/largephoto3.jpg" rel="vacation" class="scenic"><img src="/images/thumbphoto3.jpg" alt=""></a>
 
-Finally, before the </body> tag, set up Scenic to set up listeners for your photos.
+Finally, before the end body tag, set up Scenic to set up listeners for your photos.
 
     <script type="text/javascript">
         $(function() {
