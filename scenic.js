@@ -100,6 +100,7 @@
     var $scenicLis = $('#scenic ul li');
 
     $($scenicLis.get(index)).addClass('active');
+    $($scenicLis.get(index)).find('div').append('<p>what up</p>');
 
     // If there is a previous image, add the previous class
     if (index > 0)
