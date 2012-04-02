@@ -1,5 +1,8 @@
+@import 'compass';
+
 #scenic.default {
   background-color: rgba(0, 0, 0, 0.9);
+  padding: 10px 0;
 
   ul {
     li {
@@ -19,12 +22,12 @@
       &.active {
         text-align: center;
         width: 80%;
-
       }
 
       img {
+        @include box-shadow(0 5px 10px 0px rgba(0, 0, 0, 0.4));
         height: auto;
-        width: 100%;
+        max-width: 100%;
       }
 
     }

@@ -1,5 +1,6 @@
 #scenic.default {
-  background-color: rgba(0, 0, 0, 0.9); }
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 10px 0; }
   #scenic.default ul li.previous, #scenic.default ul li.next {
     width: 10%; }
   #scenic.default ul li:first-child.active {
@@ -10,5 +11,8 @@
     text-align: center;
     width: 80%; }
   #scenic.default ul li img {
+    -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.4);
     height: auto;
-    width: 100%; }
+    max-width: 100%; }

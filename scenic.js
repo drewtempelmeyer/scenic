@@ -81,7 +81,7 @@
     $('a[rel="' + rel + '"]').each(function() {
       var $a = $(this);
       // I love parenthesis!
-      $scenicUl.append($('<li />').append($('<div />').append('<span />').append($('<img />').attr({ 'src': $a.attr('href'), 'title': $a.attr('title') }))));
+      $scenicUl.append($('<li />').append($('<div />').append($('<span />').append($('<img />').attr({ 'src': $a.attr('href'), 'title': $a.attr('title') })))));
     });
 
     // Finally append Scenic to the end of the body
@@ -134,8 +134,7 @@
   */
   $.fn.scenic._resize = function() {
     if ($.fn.scenic.isVisible()) {
-      $('#scenic ul li span').css('line-height', $(window).height());
-      //$('#scenic ul li span').css('line-height', $(window).height());
+      $('#scenic ul li span').css('line-height', $(window).height() + 'px');
     }
   };
 
