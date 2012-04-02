@@ -7,6 +7,10 @@
 */
 (function($) {
 
+  var scenicOrigCoords = { x: 0, y: 0 };
+  var scenicFinalCoords = { x: 0, y: 0 };
+  var touchThreshold = { x: 30, y: 10 };
+
   $.fn.scenic = function( options ) {
 
     var settings = $.extend({
@@ -113,6 +117,12 @@
     if (index != $scenicLis.length - 1)
       $($scenicLis.get(index + 1)).addClass('next');
 
+    // Add touch listeners
+    var $scenicView = $('div#scenic');
+    $scenicView.on('touchstart', $.fn.scenic._touchStart);
+    $scenicView.on('touchmove', $.fn.scenic._touchMove);
+    $scenicView.on('touchend', $.fn.scenic._touchEnd);
+
     $.fn.scenic._resize();
   };
 
@@ -143,6 +153,44 @@
 
       if ($next.length)
         $next.addClass('next');
+    }
+  };
+
+  /**
+  PRIVATE METHOD
+  Detects the beginning of a touch event
+  */
+  $.fn.scenic._touchStart = function(event) {
+    scenicOrigCoords.x = event.targetTouches[0].pageX;
+    scenicOrigCoords.y = event.targetTouches[0].pageY;
+  };
+
+  /**
+  PRIVATE METHOD
+  Detects a touch move event
+  */
+  $.fn.scenic._touchMove = function(event) {
+    if (defaults.preventDefaultEvents)
+      event.preventDefault();
+    scenicFinalCoords.x = event.targetTouches[0].pageX;
+    scenicFinalCoords.y = event.targetTouches[0].pageY;
+  };
+
+  /**
+  PRIVATE METHOD
+  Detects the ending of a touch event
+  */
+  $.fn.scenic._touchEnd = function(event) {
+    var changeY = scenicOrigCoords.y - scenicFinalCoords.y;
+
+    if (changeY < touchThreshold.y && changeY > (touchThreshold.y*-1)) {
+      var changeX = scenicOrigCoords.x - scenicFinalCoords.x;
+
+      if(changeX > touchThreshold.x)
+        $.fn.scenic.next();
+
+      if(changeX < (touchThreshold.x*-1))
+        $.fn.scenic.previous();
     }
   };
 
