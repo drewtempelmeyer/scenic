@@ -1,0 +1,32 @@
+#scenic.default {
+  background-color: rgba(0, 0, 0, 0.9);
+
+  ul {
+    li {
+
+      &.previous, &.next {
+        width: 10%;
+      }
+
+      &:first-child.active {
+        padding-left: 10%;
+      }
+
+      &:last-child.active {
+        padding-right: 10%;
+      }
+
+      &.active {
+        text-align: center;
+        width: 80%;
+
+      }
+
+      img {
+        height: auto;
+        width: 100%;
+      }
+
+    }
+  }
+}

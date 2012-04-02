@@ -1,0 +1,14 @@
+#scenic.default {
+  background-color: rgba(0, 0, 0, 0.9); }
+  #scenic.default ul li.previous, #scenic.default ul li.next {
+    width: 10%; }
+  #scenic.default ul li:first-child.active {
+    padding-left: 10%; }
+  #scenic.default ul li:last-child.active {
+    padding-right: 10%; }
+  #scenic.default ul li.active {
+    text-align: center;
+    width: 80%; }
+  #scenic.default ul li img {
+    height: auto;
+    width: 100%; }

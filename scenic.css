@@ -1,0 +1,28 @@
+a.scenic img {
+  height: auto;
+  width: 200px; }
+
+#scenic {
+  left: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+  #scenic ul {
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0; }
+    #scenic ul li {
+      clear: none;
+      display: none;
+      float: left;
+      margin: 0;
+      padding: 0; }
+      #scenic ul li.previous, #scenic ul li.active, #scenic ul li.next {
+        display: block; }
+      #scenic ul li div, #scenic ul li img, #scenic ul li span {
+        margin: 0;
+        padding: 0; }
