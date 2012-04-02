@@ -51,32 +51,24 @@ The structure of Scenic is as follows for reference:
     <div id="scenic">
         <ul>
             <li class="previous">
-                <div>
-                    <span>
-                        <img>
-                    </span>
-                </div>
+                <span>
+                    <img>
+                </span>
             </li>
             <li class="active">
-                <div>
-                    <span>
-                        <img>
-                    </span>
-                </div>
+                <span>
+                    <img>
+                </span>
             </li>
             <li class="next">
-                <div>
-                    <span>
-                        <img>
-                    </span>
-                </div>
+                <span>
+                    <img>
+                </span>
             </li>
             <li>
-                <div>
-                    <span>
-                        <img>
-                    </span>
-                </div>
+                <span>
+                    <img>
+                </span>
             </li>
         </ul>
     </div>
