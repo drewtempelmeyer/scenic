@@ -62,6 +62,11 @@
   };
 
   /**
+  Return the Scenic version
+  */
+  $.fn.scenic.version = '0.1';
+
+  /**
   Return true if Scenic is active. false otherwise
   */
   $.fn.scenic.isVisible = function() {

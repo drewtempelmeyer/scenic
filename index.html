@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scenic Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="scenic.default.css" type="text/css" media="screen">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="scenic.packed.js"></script>
+</head>
+<body>
+  <a href="images/beach0.jpg" class="scenic" rel="vacation" title="The Beach"><img src="images/beach0.jpg" alt=""></a>
+  <a href="images/beach1.jpg" class="scenic" rel="vacation" title="The Beach"><img src="images/beach1.jpg" alt=""></a>
+  <a href="images/beach2.jpg" class="scenic" rel="vacation" title="The Beach"><img src="images/beach2.jpg" alt=""></a>
+  <a href="images/beach3.jpg" class="scenic" rel="vacation" title="The Beach"><img src="images/beach3.jpg" alt=""></a>
+  <a href="images/beach4.jpg" class="scenic" rel="vacation" title="The Beach"><img src="images/beach4.jpg" alt=""></a>
+
+  <script type="text/javascript">
+    $(function() {
+      $('a.scenic').scenic();
+    });
+  </script>
+</body>
+</html>

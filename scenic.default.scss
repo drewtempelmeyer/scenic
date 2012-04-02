@@ -1,4 +1,5 @@
 @import 'compass';
+@import 'compass/css3/pie';
 @import 'scenic';
 
 body.scenic-view {
@@ -6,11 +7,13 @@ body.scenic-view {
 }
 
 #scenic.default {
+  background-color: #1e1e1e;
   background-color: rgba(0, 0, 0, 0.9);
   padding: 10px 0;
 
   ul {
     li {
+      vertical-align: middle;
 
       &.previous, &.next {
         width: 10%;
@@ -38,10 +41,16 @@ body.scenic-view {
         width: 80%;
       }
 
+      span {
+        display: block;
+        vertical-align: middle;
+      }
+
       img {
         @include box-shadow(0 5px 10px 0px rgba(0, 0, 0, 0.4));
         height: auto;
         margin: 0;
+        max-height: 100%;
         max-width: 100%;
         vertical-align: middle;
       }
