@@ -23,6 +23,8 @@ a.scenic img {
       padding: 0; }
       #scenic ul li.previous, #scenic ul li.active, #scenic ul li.next {
         display: block; }
+        #scenic ul li.previous span, #scenic ul li.active span, #scenic ul li.next span {
+          cursor: pointer; }
       #scenic ul li div, #scenic ul li img, #scenic ul li span {
         margin: 0;
         padding: 0; }

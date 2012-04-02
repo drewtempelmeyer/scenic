@@ -27,7 +27,9 @@
       img {
         @include box-shadow(0 5px 10px 0px rgba(0, 0, 0, 0.4));
         height: auto;
+        margin: 0;
         max-width: 100%;
+        vertical-align: middle;
       }
 
     }

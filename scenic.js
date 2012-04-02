@@ -15,9 +15,19 @@
 
     // Set a listener for the escape key to close scenic
     $(document).keyup(function(e) {
-      if (e.keyCode == 27)
-        $.fn.scenic.close();
+      switch(e.keyCode) {
+        case 27: // Esc key
+          $.fn.scenic.close();
+          break;
+        case 37: // left arrow key
+          $.fn.scenic.previous();
+          break;
+        case 39: // right arrow key
+          $.fn.scenic.next();
+          break;
+      }
     });
+
 
     // Listen for window resize
     $(window).resize(function() { $.fn.scenic._resize(); });
@@ -106,26 +116,30 @@
   Show the previous image
   */
   $.fn.scenic.previous = function() {
-    var $prev = $('#scenic ul li.previous').prev('li');
-    $('#scenic ul li.next').removeClass('next');
-    $('#scenic ul li.active').removeClass('active').addClass('next');
-    $('#scenic ul li.previous').removeClass('previous').addClass('active');
+    if (!$('#scenic ul li:first-child').hasClass('active')) {
+      var $prev = $('#scenic ul li.previous').prev('li');
+      $('#scenic ul li.next').removeClass('next');
+      $('#scenic ul li.active').removeClass('active').addClass('next');
+      $('#scenic ul li.previous').removeClass('previous').addClass('active');
 
-    if ($prev.length)
-      $prev.addClass('previous');
+      if ($prev.length)
+        $prev.addClass('previous');
+    }
   };
 
   /**
   Move to the next image
   */
   $.fn.scenic.next = function() {
-    var $next = $('#scenic ul li.next').next('li');
-    $('#scenic ul li.previous').removeClass('previous');
-    $('#scenic ul li.active').removeClass('active').addClass('previous');
-    $('#scenic ul li.next').removeClass('next').addClass('active');
+    if (!$('#scenic ul li:last-child').hasClass('active')) {
+      var $next = $('#scenic ul li.next').next('li');
+      $('#scenic ul li.previous').removeClass('previous');
+      $('#scenic ul li.active').removeClass('active').addClass('previous');
+      $('#scenic ul li.next').removeClass('next').addClass('active');
 
-    if ($next.length)
-      $next.addClass('next');
+      if ($next.length)
+        $next.addClass('next');
+    }
   };
 
   /**

@@ -19,6 +19,7 @@ a.scenic {
     margin: 0;
     overflow: hidden;
     padding: 0;
+
     li {
       clear: none;
       display: none;
@@ -28,6 +29,10 @@ a.scenic {
 
       &.previous, &.active, &.next {
         display: block;
+
+        span {
+          cursor: pointer;
+        }
       }
 
       div, img, span {
