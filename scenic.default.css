@@ -7,7 +7,7 @@ a.scenic img {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%; }
   #scenic ul {
@@ -33,7 +33,7 @@ a.scenic img {
         padding: 0; }
 
 body.scenic-view {
-  overflow: hidden; }
+  overflow-x: hidden; }
 
 #scenic.default {
   background-color: #1e1e1e;
