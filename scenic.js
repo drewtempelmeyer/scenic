@@ -70,7 +70,10 @@
   $.fn.scenic.close = function() {
     if ($.fn.scenic.isVisible()) {
       var $scenic = $('#scenic');
-      $scenic.fadeOut(200, function() { $scenic.remove(); });
+      $scenic.fadeOut(200, function() {
+        $scenic.remove();
+        $('body.scenic-view').removeClass('scenic-view');
+      });
     }
   };
 
@@ -95,7 +98,7 @@
     });
 
     // Finally append Scenic to the end of the body
-    $('body').append($scenicDiv.append($scenicUl));
+    $('body').addClass('scenic-view').append($scenicDiv.append($scenicUl));
 
     var $scenicLis = $('#scenic ul li');
 

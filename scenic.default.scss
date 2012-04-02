@@ -1,6 +1,10 @@
 @import 'compass';
 @import 'scenic';
 
+body.scenic-view {
+  overflow: hidden;
+}
+
 #scenic.default {
   background-color: rgba(0, 0, 0, 0.9);
   padding: 10px 0;
@@ -10,6 +14,15 @@
 
       &.previous, &.next {
         width: 10%;
+
+        img {
+          width: 90%;
+        }
+
+      }
+
+      &.next img {
+        margin-left: 10%;
       }
 
       &:first-child.active {
