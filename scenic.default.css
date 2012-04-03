@@ -37,23 +37,26 @@ body.scenic-view {
 
 #scenic.default {
   background-color: #1e1e1e;
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 10px 0; }
+  background-color: rgba(0, 0, 0, 0.9); }
   #scenic.default ul li {
+    padding: 10px 0;
     vertical-align: middle; }
     #scenic.default ul li.previous, #scenic.default ul li.next {
       width: 10%; }
+      #scenic.default ul li.previous:hover, #scenic.default ul li.next:hover {
+        background-color: rgba(255, 255, 255, 0.4); }
       #scenic.default ul li.previous img, #scenic.default ul li.next img {
         width: 90%; }
     #scenic.default ul li.next img {
       margin-left: 10%; }
     #scenic.default ul li:first-child.active {
-      padding-left: 10%; }
+      padding-left: 20%; }
     #scenic.default ul li:last-child.active {
-      padding-right: 10%; }
+      padding-right: 20%; }
     #scenic.default ul li.active {
+      padding: 0 10%;
       text-align: center;
-      width: 80%; }
+      width: 60%; }
     #scenic.default ul li span {
       display: block;
       vertical-align: middle; }

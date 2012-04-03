@@ -14,7 +14,8 @@
   $.fn.scenic = function( options ) {
 
     var settings = $.extend({
-      'theme': 'default'
+      'theme': 'default',
+      'placeholder': 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==',
     }, options);
 
     // Set a listener for the escape key to close scenic
@@ -31,7 +32,6 @@
           break;
       }
     });
-
 
     // Listen for window resize
     $(window).resize(function() { $.fn.scenic._resize(); });
@@ -50,6 +50,7 @@
       var $this = $(this);
       $this.data('scenic-theme', settings.theme);
       $this.data('scenic-index', index);
+      $this.data('scenic-placeholder', settings.placeholder);
       index++;
 
       // Listen to all click events to trigger the Scenic viewer
@@ -90,9 +91,10 @@
   Open Scenic and create ALL OF THE THINGS
   */
   $.fn.scenic.open = function( element ) {
-    var rel        = element.attr('rel');
-    var theme      = element.data('scenic-theme');
-    var index      = element.data('scenic-index');
+    var rel         = element.attr('rel');
+    var theme       = element.data('scenic-theme');
+    var index       = element.data('scenic-index');
+    var placeholder = element.data('scenice-placeholder');
     // Set up the parent div
     var $scenicDiv = $('<div />').attr({
       'class' : theme,
@@ -103,7 +105,11 @@
     $('a[rel="' + rel + '"]').each(function() {
       var $a = $(this);
       // I love parenthesis!
-      $scenicUl.append($('<li />').append($('<span />').append($('<img />').attr({ 'src': $a.attr('href'), 'title': $a.attr('title') }))));
+      $scenicUl.append($('<li />').append($('<span />').append($('<img />').attr({
+        'data-src': $a.attr('href'),
+        'src': placeholder,
+        'title': $a.attr('title')
+      }))));
     });
 
     // Finally append Scenic to the end of the body
@@ -121,6 +127,8 @@
     // If there is a next image, add the next class
     if (index != $scenicLis.length - 1)
       $($scenicLis.get(index + 1)).addClass('next');
+
+    $.fn.scenic._imgsrc();
 
     // Add touch listeners
     var $scenicView = $('div#scenic');
@@ -143,6 +151,8 @@
 
       if ($prev.length)
         $prev.addClass('previous');
+
+      $.fn.scenic._imgsrc();
     }
   };
 
@@ -158,6 +168,8 @@
 
       if ($next.length)
         $next.addClass('next');
+
+      $.fn.scenic._imgsrc();
     }
   };
 
@@ -205,8 +217,21 @@
   */
   $.fn.scenic._resize = function() {
     if ($.fn.scenic.isVisible()) {
-      $('#scenic ul li span').css('line-height', $(window).height() + 'px');
+      var height = $(window).height() - parseInt($('#scenic').css('padding-top')) - parseInt($('#scenic').css('padding-bottom'));
+      $('#scenic ul li span').css('line-height', height + 'px');
     }
+  };
+
+  /**
+  PRIVATE METHOD
+  Update the visible images to the correct src
+  */
+  $.fn.scenic._imgsrc = function() {
+    $('#scenic li.previous, #scenic li.active, #scenic li.next').each(function() {
+      var $img = $(this).find('img');
+      if ($img.attr('data-src') != $img.attr('src'))
+        $img.attr('src', $img.attr('data-src'));
+    });
   };
 
 })(jQuery);

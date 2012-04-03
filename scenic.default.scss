@@ -9,19 +9,22 @@ body.scenic-view {
 #scenic.default {
   background-color: #1e1e1e;
   background-color: rgba(0, 0, 0, 0.9);
-  padding: 10px 0;
 
   ul {
     li {
+      padding: 10px 0;
       vertical-align: middle;
 
       &.previous, &.next {
         width: 10%;
 
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.4);
+        }
+
         img {
           width: 90%;
         }
-
       }
 
       &.next img {
@@ -29,16 +32,17 @@ body.scenic-view {
       }
 
       &:first-child.active {
-        padding-left: 10%;
+        padding-left: 20%;
       }
 
       &:last-child.active {
-        padding-right: 10%;
+        padding-right: 20%;
       }
 
       &.active {
+        padding: 0 10%;
         text-align: center;
-        width: 80%;
+        width: 60%;
       }
 
       span {
