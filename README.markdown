@@ -1,5 +1,5 @@
 # Scenic
-Scenic is an image viewer for beautiful and elegant images. Scenic supports themes as most of the work requires CSS.
+Scenic is an image viewer for beautiful and elegant images. Scenic supports themes as most of the work is done through the magical unicorns that is CSS.
 
 ## How do I use it? (Or Quick Start)
 
@@ -73,17 +73,10 @@ The structure of Scenic is as follows for reference:
         </ul>
     </div>
 
-I highly recommend using SASS (SCSS specifically) for creating your themes. Import the scenic.scss file as the first line in your SCSS theme file. This will reduce the need of an additional request.
+I highly recommend using SASS for creating your themes. Import the scenic.scss file as the first line in your SCSS theme file. This will reduce the need of an additional request.
 
 If you're not interested in using SCSS, you can import the skeleton and then your theme file:
 
     <link rel="stylesheet" type="text/css" href="css/scenic.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/scenic.yourtheme.css" media="screen">
-
-## Need Help?
-
-Need help or was something not covered? You can contact me with one of the following options:
-
-* Twitter - [@tempelmeyer](http://twitter.com/tempelmeyer)
-* Email - [drewtemp@gmail.com](mailto:drewtemp@gmail.com?subject=Need help with Scenic)
 
